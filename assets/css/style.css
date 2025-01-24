@@ -118,5 +118,9 @@ html {
 .dropdown_menu ul li{
 	width: 150px;
 	padding: 10px;
+}
 
+input {
+	border-radius: 10px;
+	
 }
