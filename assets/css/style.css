@@ -1,79 +1,172 @@
-body,
-html {
-	height: 100%;
-	overflow: hidden;
+/* DESKTOP FIRST : TAILLE ECRAN SUPERIEUR OU EGALE A 1025px
+/**************************
+CSS COMMUN
+**************************/
+* {
+    box-sizing: border-box;
 }
 
-
-#img_logo_site {
-	width: 30%;
-}
-
-.background-image {
-	position: fixed;
-	left: 0;
-	right: 0;
-	z-index: 1;
-	display: block;
-	/* The image used */
-	background-image: url("../../img/BACK.png");
-
-	/* Add the blur effect */
-	filter: blur(8px);
-	-webkit-filter: blur(8px);
-
-	/* Full height */
-	height: 100%;
-
-	/* Center and scale the image nicely */
-	background-position: center;
+body {
+    /******************************************************************** 
+    C'EST ICI QUE CA SE PASSE POUR METTRE LE FOOTER EN BAS DE PAGE 
+    ********************************************************************/
+    display: grid; /*Transforme la balise body en contenur grid*/
+  
+    grid-template-rows: auto 1fr auto;/*défini la hauteur que les lignes de la grille doivent occupé. Auto correspond à la hauteur par défaut de la ligne (en fonction de ce qu'il y a dedans donc). Fr (fraction) permet d'occuper l'espace restant*/
+  
+    height: calc(100vh - 60px); /*On déduit automatiquement les 30px de marge top et bottom pour éviter d'avoir la barre de scroll si le contenu est faible*/
+    /***********************************************************************
+    ***********************************************************************/
+    
+    /**** Le reste c'est de l'habillage ****/
+    /*background: #444;*/
+    background-image: url("../../img/BACK.png");
+    background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+    
+    color: white;
+	font-family: "Open Sans", arial, sans-serif;
+    font-size: 1rem;
+    
+    line-height: 2;
+    margin: 30px; /*Le fameux margin déduit un peu plus haut*/
 }
 
-.content {
-	position: fixed;
-	left: 0;
-	right: 0;
-	z-index: 9999;
-	margin-left: 20px;
-	margin-right: 20px;
+.container{
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.orange {
+	color: #FF9D00;
+}
+
+h1,  h2,  h3 {
+	font-family: "Rabbit", arial, sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+header, footer{
+    background:  #5c5b5b57; 
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
 }
 
 
-.navbar {
-	margin-bottom: 0;
-	border: 0;
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
-	border-radius: 0;
-	-o-transition: all .6s;
-	-moz-transition: all .6s;
-	-webkit-transition: all .6s;
-	-ms-transition: all .6s;
-	transition: all .6s;
-	background-color: rgba(255, 255, 255, -0.55) !important;
-	padding: inherit;
+/**************************
+CSS HEADER
+**************************/
+header {
+    /* padding: 25px; */
 }
 
-.navbar ul {
-	font-size: x-large;
-	font-style: italic;
-	font-weight: bold;
-	--bs-dropdown-bg: rgb(161 158 158 / 14%);
+header .flex-header{ /*conteneur flex*/
+    display: flex;
+    justify-content: space-between;
 }
 
-.navbar ul li {
-	margin-right: 15px;
+header img { /*item*/
+    width: -webkit-fill-available;
 }
 
+header nav { /*item*/ /*conteneur flex*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: flex-end;
+
+    font-family: "Rabbit", arial, sans-serif;
+}
+
+header nav a { /*items*/
+    color: white;
+    text-decoration: none;
+}
+
+header nav a:hover {
+	color: #FF9D00;
+}
+
+
+/**************************
+CSS MAIN INDEX
+**************************/
+main{
+    margin: 70px 30px 40px 30px;
+    background:  #5c5b5b57; 
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+}
+
+main div {
+    /* margin: auto; */
+    /* width: 60%; */
+    /* border: 3px solid #73AD21; */
+    padding: 5%;
+
+}
+
+
+/**************************
+CSS FOOTER
+**************************/
 footer {
-	text-align: center;
-	padding: 5px;
-	color: #000;
-	display: block;
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 12px;
+    margin-top: 50px;
+    padding: 10px;
+    text-align: center;
 }
 
-main {
-    height: 810px;
+footer a{ /*tous les liens du footer y compris ceux de la nav*/
+    color: rgb(5, 5, 5);
 }
+
+footer img {
+    width: 50px;
+}
+
+
+/**************************
+CSS MEDIA QUERIES
+**************************/
+/*TABLET A partir de 1024px et inférieur*/
+@media screen and (max-width: 1024px){
+    
+}
+
+/*MOBILE A partir de 767px et inférieur*/
+@media screen and (max-width: 767px){
+    /*HEADER*/
+    header .flex-header{
+        flex-direction: column; /*On change de direction pour forcer les items à se placer les uns en dessous des autres*/
+        align-items: center; /*on les force à se centrer*/
+    }
+
+    header img { /*item*/
+        margin-bottom: 25px;
+    }
+
+    header nav {
+        align-items: center; /*on force les items à se centrer*/
+    }
+} 
+
+
+.navbarSupportedContent {
+    margin-right: 12%;
+}
+
+
+
+
+
