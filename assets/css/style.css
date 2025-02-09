@@ -1,11 +1,11 @@
 body,
 html {
 	height: 100%;
+	overflow: hidden;
 }
 
 
 #img_logo_site {
-
 	width: 30%;
 }
 
@@ -53,12 +53,27 @@ html {
 	-ms-transition: all .6s;
 	transition: all .6s;
 	background-color: rgba(255, 255, 255, -0.55) !important;
+	padding: inherit;
 }
 
 .navbar ul {
 	font-size: x-large;
 	font-style: italic;
 	font-weight: bold;
-
 	--bs-dropdown-bg: rgb(161 158 158 / 14%);
+}
+
+.navbar ul li {
+	margin-right: 15px;
+}
+
+footer {
+	text-align: center;
+	padding: 5px;
+	color: #000;
+	display: block;
+}
+
+main {
+    height: 810px;
 }
