@@ -16,41 +16,49 @@ html {
 	z-index: 1;
 	display: block;
 	/* The image used */
-	background-image: url("../../img/image_school.jpg"); 
+	background-image: url("../../img/BACK.png");
 
 	/* Add the blur effect */
 	filter: blur(8px);
 	-webkit-filter: blur(8px);
-  
+
 	/* Full height */
 	height: 100%;
-  
+
 	/* Center and scale the image nicely */
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-  }
-  
-  .content {
+}
+
+.content {
 	position: fixed;
 	left: 0;
 	right: 0;
 	z-index: 9999;
 	margin-left: 20px;
 	margin-right: 20px;
-  }
+}
 
 
-  .navbar {
-    margin-bottom: 0;
-    border: 0;
-    -moz-border-radius: 0;
-    -webkit-border-radius: 0;
-    border-radius: 0;
-    -o-transition: all .6s;
-    -moz-transition: all .6s;
-    -webkit-transition: all .6s;
-    -ms-transition: all .6s;
-    transition: all .6s;
-	background-color: rgba(255, 255, 255, 0.45) !important;
+.navbar {
+	margin-bottom: 0;
+	border: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	-o-transition: all .6s;
+	-moz-transition: all .6s;
+	-webkit-transition: all .6s;
+	-ms-transition: all .6s;
+	transition: all .6s;
+	background-color: rgba(255, 255, 255, -0.55) !important;
+}
+
+.navbar ul {
+	font-size: x-large;
+	font-style: italic;
+	font-weight: bold;
+
+	--bs-dropdown-bg: rgb(161 158 158 / 14%);
 }
